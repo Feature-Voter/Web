@@ -1,7 +1,10 @@
 import LoginForm from "../../components/login"
 
 describe('index.cy.ts', () => {
-  it('should have headline', () => {
+  beforeEach(() => {
     cy.mount(<LoginForm />)
+  })
+  it('should have headline', () => {
+    cy.get("h1")
   })
 })

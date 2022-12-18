@@ -1,6 +1,11 @@
+import styles from '../styles/LoginForm.module.scss'
+
 function LoginForm() {
   return (
-    <div>loginForm</div>
+    <form className={styles.LoginForm}>
+      <h1>Login Form</h1>
+      {/* <input type="text" value={this.state.value} onChange={this.handleChange} /> */}
+    </form>
   )
 }
 
