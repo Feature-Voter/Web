@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
+import LoginPage from '../components/login'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1>test </h1>
+        <LoginPage></LoginPage>
       </main>
     </>
   )
