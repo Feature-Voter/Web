@@ -1,6 +1,9 @@
 import styles from '../styles/LoginForm.module.scss'
 
 function LoginForm() {
+  const [userName, setUserName] = useState('')
+  const [userPassword, setPassword] = useState('')
+
   function handleSubmit(){
 
   }
@@ -8,7 +11,10 @@ function LoginForm() {
   return (
     <form className={styles.LoginForm} onSubmit={handleSubmit}>
       <h1>Login Form</h1>
-      {/* <input type="text" value={this.state.value} onChange={this.handleChange} />-c */}
+      <div className={styles.Center}>
+        <input type="text" value={userName} placeholder="user name" onChange={ e => setUserName(e.target.value)} />
+        <input type="text" value={userPassword} placeholder="password" onChange={ e => setPassword(e.target.value)} />
+      </div>
     </form>
   )
 }

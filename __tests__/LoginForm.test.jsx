@@ -12,4 +12,15 @@ describe('LoginForm', () => {
 
     expect(heading).toBeInTheDocument()
   })
+    it('should have userName input', () => {
+        const input = screen.getByPlaceholderText('user name')
+
+        expect(input).toBeInTheDocument()
+    })
+
+    it('should have userPassword input', () => {
+        const input = screen.getByPlaceholderText('password')
+
+        expect(input).toBeInTheDocument()
+    })
 })
