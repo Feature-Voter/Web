@@ -1,24 +1,7 @@
 import { useReducer, useState } from 'react'
 import styles from '../styles/LoginForm.module.scss'
 
-enum Actions {
-  userNameChanged
-}
-
-interface State {
-  user: string;
-}
-
-function reducer(state: State, action: Actions){
-  switch (action) {
-    case Actions.userNameChanged: 
-      return { user: state.user }
-  }
-}
-
 function LoginForm() {
-
-  const [state, dispatch] = useReducer(reducer, {user: ""})
   const [userName, setUserName] = useState('')
   const [userPassword, setPassword] = useState('')
 
