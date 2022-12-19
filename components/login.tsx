@@ -6,7 +6,12 @@ function LoginForm() {
   const [userPassword, setPassword] = useState('')
 
   function handleSubmit(){
-
+    const data = JSON.stringify({userName: userName, password: userPassword})
+    fetch('/api/login', {body: data, method: 'POST'})
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data)
+      })
   }
 
   return (
@@ -17,7 +22,7 @@ function LoginForm() {
         <input type="text" value={userPassword} placeholder="password" onChange={ e => setPassword(e.target.value)} />
       </div>
       <div className={styles.Bottom}>
-        <input type="button" value="Submit" className={styles.button} />
+        <input type="button" value="Submit" className={styles.button} onClick={handleSubmit}/>
       </div>
     </form>
   )
