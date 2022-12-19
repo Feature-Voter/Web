@@ -14,6 +14,11 @@ describe('/api/login', () => {
         await login(req, res)
 
         expect(res._getStatusCode()).toBe(200)
+        expect(JSON.parse(res._getData())).toEqual(
+            expect.objectContaining({
+                message: 'ok',
+            }),
+        )
     })
 
     it("should get 403", async () => {
@@ -28,6 +33,11 @@ describe('/api/login', () => {
         await login(req, res)
 
         expect(res._getStatusCode()).toBe(403)
+        expect(JSON.parse(res._getData())).toEqual(
+            expect.objectContaining({
+                message: 'not registered',
+            }),
+        )
     })
 
     it("should get 400", async () => {
@@ -42,5 +52,10 @@ describe('/api/login', () => {
         await login(req, res)
 
         expect(res._getStatusCode()).toBe(400)
+        expect(JSON.parse(res._getData())).toEqual(
+            expect.objectContaining({
+                message: 'nope only post',
+            }),
+        )
     })
 })
