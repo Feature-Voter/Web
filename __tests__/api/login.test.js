@@ -1,5 +1,5 @@
 import { createMocks } from 'node-mocks-http'
-import login from '../pages/api/login'
+import login from '../../pages/api/login'
 
 describe('/api/login', () => {
     it("should get 200", async () => {
