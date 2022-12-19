@@ -10,7 +10,9 @@ export default function handler(
   res: NextApiResponse<Data>
 ) {
   if (req.method == 'POST') {
-    if (req.body.userName === "demo" && req.body.password === "demo"){
+    const data = JSON.parse(req.body)
+
+    if (data.userName == "demo" && data.password == "demo"){
       res.status(200).json({message: "ok" })
     } else {
       // console.log(req.body)

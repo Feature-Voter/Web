@@ -3,12 +3,13 @@ import login from '../../pages/api/login'
 
 describe('/api/login', () => {
     it("should get 200", async () => {
+        const data = JSON.stringify({
+            userName: 'demo',
+            password: 'demo'
+        })
         const { req, res } = createMocks({
             method: 'POST',
-            body: {
-                userName: 'demo',
-                password: 'demo'
-            },
+            body: data,
         })
 
         await login(req, res)
@@ -22,12 +23,14 @@ describe('/api/login', () => {
     })
 
     it("should get 403", async () => {
+        const data = JSON.stringify({
+            userName: 'demo',
+            password: 'demo1'
+        })
+
         const { req, res } = createMocks({
             method: 'POST',
-            body: {
-                userName: 'demo',
-                password: 'demo1'
-            },
+            body: data,
         })
 
         await login(req, res)
@@ -41,12 +44,13 @@ describe('/api/login', () => {
     })
 
     it("should get 400", async () => {
+        const data = JSON.stringify({
+            userName: 'demo',
+            password: 'demo1'
+        })
         const { req, res } = createMocks({
             method: 'GET',
-            body: {
-                userName: 'demo',
-                password: 'demo1'
-            },
+            body: data,
         })
 
         await login(req, res)
