@@ -52,8 +52,10 @@ $size: 325px;
         position: relative;
         left: 50%;
         transform: translate(-50%);
-        width: 85%;
+        width: 75%;
         padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
 
         &:first-of-type {
             margin-bottom: 15px;

@@ -9,7 +9,7 @@ describe('LoginForm', () => {
 
     it('renders a heading', () => {
         const heading = screen.getByRole('heading', {
-            name: /Login Form/i,
+            name: /Anmelden/i,
         })
 
         expect(heading).toBeInTheDocument()
