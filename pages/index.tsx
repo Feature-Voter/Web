@@ -1,6 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.scss'
 import LoginForm from '../components/login'
+import { LoginProvider } from '../components/LoginContext'
+import SecureComponent, {UnsecureComponent} from '../components/SecureComponent'
+import Navigationbar from '../components/Navigationbar'
 
 export default function Home() {
   return (
@@ -13,7 +16,15 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <h1>test </h1>
-        <LoginForm />
+        <LoginProvider>
+          <UnsecureComponent>
+            <LoginForm />
+          </UnsecureComponent>
+          <SecureComponent>
+            <Navigationbar />
+            <h2>test</h2>
+          </SecureComponent>
+        </LoginProvider>
       </main>
     </>
   )

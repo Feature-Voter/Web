@@ -32,4 +32,19 @@ describe('LoginForm', () => {
 
         expect(button).toBeInTheDocument()
     })
+
+    describe('handle Sutmit', () => {
+
+        it('should set login to true', () => {
+            const data = JSON.stringify({userName: 'demo', password: 'demo'})
+
+            global.fetch = jest.fn(() =>
+                Promise.resolve({
+                    json: () => Promise.resolve(data),
+                })
+            );
+
+            
+        })
+    })
 })
