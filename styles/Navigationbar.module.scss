@@ -1,3 +1,16 @@
-nav {
+.nav {
     display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding: 30px 15px;
+
+    h1 {
+        vertical-align: middle;
+    }
+
+    input {
+        float: right;
+        padding: 10px 30px;
+        border-radius: 5px;
+        border-style: none;
+    }
 }

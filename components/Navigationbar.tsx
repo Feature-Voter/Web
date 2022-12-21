@@ -1,5 +1,6 @@
 import { useContext } from "react"
 import { LoginContext } from "./LoginContext"
+import styles from "../styles/Navigationbar.module.scss"
 
 export default function Navigationbar() {
     const { logout } = useContext(LoginContext)
@@ -9,9 +10,9 @@ export default function Navigationbar() {
     }
 
     return (<>
-     <nav>
+     <nav className={styles.nav}>
         <div>
-            
+            <h1>feature-voter</h1>
         </div>
         <div>
 
