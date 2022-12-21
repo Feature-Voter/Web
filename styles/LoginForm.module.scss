@@ -67,4 +67,21 @@ $size: 325px;
             margin-top: 25px;
         }
     }
+
+    .seeButton {
+        width: 30px;
+        padding: 0px;
+        transform: none;
+        left: auto;
+        background: transparent;
+        top: 85px;
+        right: 30px;
+        position: absolute;
+    }
+
+    span {
+        text-align: center;
+        display: inline-block;
+        width: 100%;
+    }
 }

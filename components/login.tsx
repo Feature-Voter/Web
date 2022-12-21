@@ -6,6 +6,7 @@ function LoginForm() {
   const [userName, setUserName] = useState('')
   const [userPassword, setPassword] = useState('')
   const [loginError, setLoginError] = useState<number | null>(null);
+  const [seePassword, setSeePassword] = useState(false)
   const { login } = useContext(LoginContext)
 
   function sendUserLogin(userName: String, password: String) {
@@ -32,12 +33,20 @@ function LoginForm() {
     sendUserLogin(userName, userPassword)
   }
 
+  function handleSeePassword() {
+    setSeePassword(!seePassword)
+  }
+
   return (
     <form className={styles.LoginForm} onSubmit={handleSubmit}>
       <h1>Anmelden</h1>
       <div className={styles.Center}>
         <input type="text" value={userName} placeholder="user name" onChange={ e => setUserName(e.target.value)} />
-        <input type="text" value={userPassword} placeholder="password" onChange={ e => setPassword(e.target.value)} />
+        <input type="password" value={userPassword} placeholder="password" onChange={ e => setPassword(e.target.value)} />
+        <input type="button" value="see" className={styles.seeButton} onClick={handleSeePassword}/>
+        {
+          seePassword ? <span>{userPassword}</span> : null
+         }
       </div>
       <div className={styles.Bottom}>
         <input type="button" value="Submit" className={styles.button} onClick={handleSubmit}/>
