@@ -13,4 +13,13 @@
         border-radius: 5px;
         border-style: none;
     }
+
+    div > input[type="button"] {
+        background: #c02f2f;
+        color: white;
+
+        &:hover {
+            background: #831313;
+        }
+    }
 }
