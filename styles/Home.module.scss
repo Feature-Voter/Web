@@ -3,4 +3,8 @@
   min-height: 100vh;
   min-width: 100vw;
   color: #fff;
+  
+  > div {
+    padding: 20px;
+  }
 }
