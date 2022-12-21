@@ -1,0 +1,80 @@
+.voteList {
+    // background: red;
+
+    div > input[type="button"] {
+        background: #c02f2f;
+        color: white;
+
+        &:hover {
+            background: #831313;
+        }
+    }
+
+    > div > div > input {
+        display: inline;
+        width: auto;
+        border-radius: 5px;
+        border: none;
+        padding: 10px 15px;
+        position: absolute;
+        right: 0px;
+        top: 2px;
+    }
+    > div > div  {
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        width: 80%;
+        padding: 10px 15px;
+    }
+    span {
+        width: 100%;
+        vertical-align: middle;
+    }
+
+    padding-bottom: 10px;
+
+}
+
+.voteComponent {
+    background: rgba($color: #080808, $alpha: 0.6);
+    max-width: 500px;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+
+    > div > input {
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translate(-50%);
+        width: 75%;
+        padding: 10px 15px;
+        border-radius: 5px;
+        border: none;
+
+        &:first-of-type {
+            margin-bottom: 15px;
+        }
+    }
+
+    > div {
+        &:first-of-type {
+            padding-top: 20px;
+        }
+        &:last-of-type {
+            padding-bottom: 20px;
+        }
+    }
+
+    input[type="button"] {
+        background: #0086F8;
+        transition: 0.3s;
+
+        &:hover {
+            background: #005cac;
+        }
+    }
+}

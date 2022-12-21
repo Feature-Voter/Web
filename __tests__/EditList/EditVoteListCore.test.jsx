@@ -15,7 +15,7 @@ describe('EditListCore', () => {
         fireEvent.change(titleInput, {target: {value: "test"}})
         expect(titleInput.value).toBe('test')
 
-        const addButton = screen.getByDisplayValue('Add New')
+        const addButton = screen.getByDisplayValue('add')
         fireEvent.click(addButton)
 
         let items = screen.getAllByTestId('listItem')
@@ -27,7 +27,7 @@ describe('EditListCore', () => {
         fireEvent.change(titleInput, {target: {value: "test"}})
         expect(titleInput.value).toBe('test')
 
-        const addButton = screen.getByDisplayValue('Add New')
+        const addButton = screen.getByDisplayValue('add')
         fireEvent.click(addButton)
 
         fireEvent.change(titleInput, {target: {value: "test"}})

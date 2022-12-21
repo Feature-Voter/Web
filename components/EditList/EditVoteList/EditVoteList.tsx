@@ -20,7 +20,7 @@ function EditVoteList() {
     };
 
     return (
-        <>
+        <div className={styles.voteComponent}>
             <div className={styles.voteList}>
                 {
                     state.items.map((item,i) => 
@@ -32,9 +32,9 @@ function EditVoteList() {
             </div>
             <div>
                 <input type="text" value={state.newItem} placeholder="new item" onChange={newTitleChanged} />
-                <input type="button" value="Add New" onClick={handleAddNewButton}/>
+                <input type="button" value="add" onClick={handleAddNewButton}/>
             </div>
-        </>
+        </div>
     )
 }
 
