@@ -1,13 +1,18 @@
-import React, { useReducer } from 'react'
+import React, { useReducer, useState } from 'react'
 import EditListItem from '../EditListItem/EditListItem'
 import styles from '../../../styles/EditVoteList.module.scss'
 import {Actions, reducer, voteItem } from './EditVoteListCore'
 
 function EditVoteList() {
     const [state, dispatch] = useReducer(reducer, {items: [], newItem: ""})
+    const [hasError, setError] = useState(false)
 
     function handleAddNewButton(){
-        dispatch({type: Actions.addItem, payload: {id: "", title: state.newItem}})
+        if (state.newItem === "") {
+            setError(true)
+        } else {
+            dispatch({type: Actions.addItem, payload: {id: "", title: state.newItem}})
+        }
     }
 
     function handleDelete(item: voteItem){
@@ -15,6 +20,7 @@ function EditVoteList() {
     }
 
     const newTitleChanged = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setError(false)
         const title = event.target.value
         dispatch({type: Actions.changeEdit, payload: {id: "", title: title}})
     };
@@ -33,6 +39,9 @@ function EditVoteList() {
             <div>
                 <input type="text" value={state.newItem} placeholder="new item" onChange={newTitleChanged} />
                 <input type="button" value="add" onClick={handleAddNewButton}/>
+                {
+                    hasError ? <p className={styles.errorText}>you need to type something!</p> : null
+                }
             </div>
         </div>
     )
