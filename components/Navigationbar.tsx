@@ -9,6 +9,16 @@ export default function Navigationbar() {
     }
 
     return (<>
-     <input type="button" value="Logout" onClick={handleLogout}/>
+     <nav>
+        <div>
+            
+        </div>
+        <div>
+
+        </div>
+        <div>
+            <input type="button" value="Logout" onClick={handleLogout}/>
+        </div>
+     </nav>
     </>)
 }

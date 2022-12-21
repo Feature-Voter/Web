@@ -1,10 +1,14 @@
-import { render, screen } from '@testing-library/react'
+import { render, screen, fireEvent } from '@testing-library/react'
 import '@testing-library/jest-dom'
+import { act } from 'react-dom/test-utils';
 import LoginForm from '../components/login'
+import 'whatwg-fetch';
 
 describe('LoginForm', () => {
     beforeEach(() => {
-        render(<LoginForm />)
+        act(() => {
+            render(<LoginForm />)
+        })
     })
 
     it('renders a heading', () => {
@@ -33,18 +37,25 @@ describe('LoginForm', () => {
         expect(button).toBeInTheDocument()
     })
 
-    describe('handle Sutmit', () => {
+    // describe('handle Sutmit', () => {
 
-        it('should set login to true', () => {
-            const data = JSON.stringify({userName: 'demo', password: 'demo'})
+    //     it('should set login to true', () => {
+    //         const data = JSON.stringify({message: 'ok'})
 
-            global.fetch = jest.fn(() =>
-                Promise.resolve({
-                    json: () => Promise.resolve(data),
-                })
-            );
+    //         jest.spyOn(global, 'fetch').mockResolvedValue({
+    //             json: jest.fn().mockResolvedValue(data)
+    //         })
 
+    //         const nameInput = screen.getByPlaceholderText('user name')
+    //         fireEvent.change(nameInput, {target: {value: "demo"}})
+
+    //         const passwordInput = screen.getByPlaceholderText('password')
+    //         fireEvent.change(passwordInput, {target: {value: "demo"}})
             
-        })
-    })
+    //         const button = screen.getByDisplayValue('Submit')
+    //         act(()=> {
+    //             fireEvent.click(button)
+    //         })
+    //     })
+    // })
 })

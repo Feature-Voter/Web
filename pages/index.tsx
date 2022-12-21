@@ -4,6 +4,7 @@ import LoginForm from '../components/login'
 import { LoginProvider } from '../components/LoginContext'
 import SecureComponent, {UnsecureComponent} from '../components/SecureComponent'
 import Navigationbar from '../components/Navigationbar'
+import EditVoteList from '../components/EditList/EditVoteList/EditVoteList'
 
 export default function Home() {
   return (
@@ -22,7 +23,7 @@ export default function Home() {
           </UnsecureComponent>
           <SecureComponent>
             <Navigationbar />
-            <h2>test</h2>
+            <EditVoteList />
           </SecureComponent>
         </LoginProvider>
       </main>
